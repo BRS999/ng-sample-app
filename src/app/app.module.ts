@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav/nav-bar.component';
 import { EventDetailsComponent, CreateEventComponent, EventsListComponent, EventThumbnailComponent } from './events/index';
 import { appRoutes } from '../routes';
-import { ErrorsComponent } from './errors/errors.component';
 import { EventRouteActivatorService, ToastrService, EventService } from './shared/index';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,6 @@ import { EventRouteActivatorService, ToastrService, EventService } from './share
     NavBarComponent,
     EventDetailsComponent,
     CreateEventComponent,
-    ErrorsComponent
   ],
   imports: [
     BrowserModule,
