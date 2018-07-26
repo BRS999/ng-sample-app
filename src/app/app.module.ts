@@ -8,6 +8,7 @@ import { EventDetailsComponent, CreateEventComponent, EventsListComponent, Event
 import { appRoutes } from '../routes';
 import { EventRouteActivatorService, ToastrService, EventService } from './shared/index';
 import { UserModule } from './user/user.module';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { UserModule } from './user/user.module';
     NavBarComponent,
     EventDetailsComponent,
     CreateEventComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,
