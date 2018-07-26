@@ -28,7 +28,22 @@ import { EventRouteActivatorService } from './shared/event-route-activator.servi
     BrowserModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [EventService, ToastrService, EventRouteActivatorService],
+  providers: [
+    EventService,
+    ToastrService,
+    EventRouteActivatorService,
+    {
+      provide: 'canDeactivateCreateEvent',
+      useValue: checkDirtyState
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export function checkDirtyState(component: CreateEventComponent) {
+  if (component.isDirty) {
+    return window.confirm("You have not saved this event, do you want to cancel?")
+  }
+  return true;
+}

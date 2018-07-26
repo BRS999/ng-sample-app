@@ -8,6 +8,7 @@ import { Router } from '../../../../node_modules/@angular/router';
 })
 export class CreateEventComponent implements OnInit {
 
+  isDirty: boolean = true;
   constructor(private router: Router) { }
 
   ngOnInit() {
