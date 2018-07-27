@@ -9,6 +9,7 @@ import { appRoutes } from '../routes';
 import { EventRouteActivatorService, ToastrService, EventService } from './shared/index';
 import { UserModule } from './user/user.module';
 import { ErrorComponent } from './error/error.component';
+import { AuthService } from './user/auth.service';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ErrorComponent } from './error/error.component';
     EventService,
     ToastrService,
     EventRouteActivatorService,
+    AuthService,
     {
       provide: 'canDeactivateCreateEvent',
       useValue: checkDirtyState
