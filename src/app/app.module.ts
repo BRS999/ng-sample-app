@@ -5,11 +5,11 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav/nav-bar.component';
 import { EventDetailsComponent, CreateEventComponent, EventsListComponent, EventThumbnailComponent } from './events';
-import { appRoutes } from '../routes';
+import { appRoutes } from './routes';
 import { EventRouteActivatorService, ToastrService, EventService } from './shared';
-import { UserModule } from './user/user.module';
 import { ErrorComponent } from './error/error.component';
 import { AuthService } from './user/auth.service';
+import { ReactiveFormsModule, FormsModule } from '../../node_modules/@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,6 +23,8 @@ import { AuthService } from './user/auth.service';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [

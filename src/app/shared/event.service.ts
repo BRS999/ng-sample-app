@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core'
 import { Subject, Observable } from 'rxjs';
 import { IEvent } from '../events';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class EventService {
+
   getEvents(): Observable<IEvent[]> {
     let subject = new Subject<IEvent[]>();
     setTimeout(() => {
@@ -16,6 +18,12 @@ export class EventService {
 
   getEvent(id: number): IEvent {
     return EVENTS.find(event => event.id === id)
+  }
+
+  saveEvent(event) {
+    event.id = 999
+    event.sessions = []
+    EVENTS.push(event);
   }
 }
 
