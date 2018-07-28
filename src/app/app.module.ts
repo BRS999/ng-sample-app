@@ -4,7 +4,14 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav/nav-bar.component';
-import { EventDetailsComponent, CreateEventComponent, EventsListComponent, EventThumbnailComponent, CreateSessionComponent } from './events';
+import {
+  EventDetailsComponent,
+  CreateEventComponent,
+  EventsListComponent,
+  EventThumbnailComponent,
+  CreateSessionComponent,
+  SessionListComponent
+} from './events';
 import { appRoutes } from './routes';
 import { EventRouteActivatorService, ToastrService, EventService } from './shared';
 import { ErrorComponent } from './error/error.component';
@@ -20,7 +27,8 @@ import { ReactiveFormsModule, FormsModule } from '../../node_modules/@angular/fo
     EventDetailsComponent,
     CreateEventComponent,
     ErrorComponent,
-    CreateSessionComponent
+    CreateSessionComponent,
+    SessionListComponent
   ],
   imports: [
     BrowserModule,
