@@ -13,7 +13,7 @@ import {
   SessionListComponent
 } from './events';
 import { appRoutes } from './routes';
-import { EventRouteActivatorService, ToastrService, EventService } from './shared';
+import { EventRouteActivatorService, ToastrService, EventService, DurationPipe } from './shared';
 import { ErrorComponent } from './error/error.component';
 import { AuthService } from './user/auth.service';
 import { ReactiveFormsModule, FormsModule } from '../../node_modules/@angular/forms';
@@ -30,7 +30,8 @@ import { CollapsibleWellComponent } from './common/collapsible-well.component';
     ErrorComponent,
     CreateSessionComponent,
     SessionListComponent,
-    CollapsibleWellComponent
+    CollapsibleWellComponent,
+    DurationPipe
   ],
   imports: [
     BrowserModule,
