@@ -17,6 +17,7 @@ import { EventRouteActivatorService, ToastrService, EventService } from './share
 import { ErrorComponent } from './error/error.component';
 import { AuthService } from './user/auth.service';
 import { ReactiveFormsModule, FormsModule } from '../../node_modules/@angular/forms';
+import { CollapsibleWellComponent } from './common/collapsible-well.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ReactiveFormsModule, FormsModule } from '../../node_modules/@angular/fo
     CreateEventComponent,
     ErrorComponent,
     CreateSessionComponent,
-    SessionListComponent
+    SessionListComponent,
+    CollapsibleWellComponent
   ],
   imports: [
     BrowserModule,
