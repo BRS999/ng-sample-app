@@ -13,11 +13,12 @@ import {
   SessionListComponent
 } from './events';
 import { appRoutes } from './routes';
-import { EventRouteActivatorService, ToastrService, EventService, DurationPipe } from './shared';
+import { EventRouteActivatorService, EventService, DurationPipe, TOASTR_TOKEN, Toastr } from './shared';
 import { ErrorComponent } from './error/error.component';
 import { AuthService } from './user/auth.service';
 import { ReactiveFormsModule, FormsModule } from '../../node_modules/@angular/forms';
 import { CollapsibleWellComponent } from './common/collapsible-well.component';
+declare let toastr: Toastr;
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import { CollapsibleWellComponent } from './common/collapsible-well.component';
   ],
   providers: [
     EventService,
-    ToastrService,
+    { provide: TOASTR_TOKEN, useValue: toastr }, // Opaque token
     EventRouteActivatorService,
     AuthService,
     {
