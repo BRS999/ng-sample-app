@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core'
-import { Subject, Observable } from 'rxjs';
-import { IEvent } from '../events';
+import { Observable, Subject, asapScheduler, pipe, of, from, interval, merge, fromEvent } from 'rxjs';
+import { mapTo, delay } from 'rxjs/operators';
+
+import { IEvent, ISession, EventsListComponent } from '../events';
 import { Router } from '@angular/router';
+import { EventEmitter } from 'events';
+import { del } from '../../../node_modules/@types/selenium-webdriver/http';
 
 @Injectable()
 export class EventService {
@@ -30,6 +34,23 @@ export class EventService {
     let index = EVENTS.findIndex(x => x.id == event.id);
 
     EVENTS[index] = event;
+  }
+
+  searchSessions(searchTerm: string): Observable<ISession[]> {
+    var result: ISession[] = [];
+
+    EVENTS.forEach(event => {
+      var matchingSessions = event.sessions.filter(session => session.name.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase());
+      matchingSessions = matchingSessions.map((session: any) => {
+        session.eventId = event.id;
+        return session;
+      })
+
+      result = result.concat(matchingSessions);
+    });
+
+    //Simulate delay
+    return of(result).pipe(delay(100));
   }
 }
 
