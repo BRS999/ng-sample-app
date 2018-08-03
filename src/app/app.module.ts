@@ -10,10 +10,11 @@ import {
   EventsListComponent,
   EventThumbnailComponent,
   CreateSessionComponent,
-  SessionListComponent
+  SessionListComponent,
+  UpvoteComponent
 } from './events';
 import { appRoutes } from './routes';
-import { EventRouteActivatorService, EventService, DurationPipe, TOASTR_TOKEN, Toastr, JQUERY_TOKEN } from './shared';
+import { EventRouteActivatorService, EventService, DurationPipe, TOASTR_TOKEN, Toastr, JQUERY_TOKEN, VoterService } from './shared';
 import { ErrorComponent } from './error/error.component';
 import { AuthService } from './user/auth.service';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -38,7 +39,8 @@ let jQuery = window['$'];
     CollapsibleWellComponent,
     DurationPipe,
     SimpleModalComponent,
-    ModalTriggerDirective
+    ModalTriggerDirective,
+    UpvoteComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +50,7 @@ let jQuery = window['$'];
   ],
   providers: [
     EventService,
+    VoterService,
     { provide: TOASTR_TOKEN, useValue: toastr }, // Opaque token
     { provide: JQUERY_TOKEN, useValue: jQuery }, // Opaque token
     EventRouteActivatorService,
