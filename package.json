@@ -13,8 +13,8 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^6.0.3",
-    "@angular/common": "^6.0.3",
     "@angular/cli": "~6.0.8",
+    "@angular/common": "^6.0.3",
     "@angular/compiler": "^6.0.3",
     "@angular/core": "^6.0.3",
     "@angular/forms": "^6.0.3",
@@ -23,6 +23,7 @@
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
     "core-js": "^2.5.4",
+    "jquery": "^3.3.1",
     "ngf-bootstrap": "0.0.5",
     "rxjs": "^6.0.0",
     "toastr": "^2.1.4",

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../user/auth.service';
 import { ISession } from '../events';
 import { EventService } from '../shared';
-import { Observable } from '../../../node_modules/rxjs';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'nav-bar',
@@ -20,9 +20,6 @@ export class NavBarComponent implements OnInit {
   searchSessions(searchTerm) {
     this.eventService.searchSessions(searchTerm).subscribe(sessions => {
       this.foundSessions = sessions;
-      console.log('Found sessions', this.foundSessions);
     });
   }
-
-
 }

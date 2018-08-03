@@ -5,7 +5,7 @@ import { mapTo, delay } from 'rxjs/operators';
 import { IEvent, ISession, EventsListComponent } from '../events';
 import { Router } from '@angular/router';
 import { EventEmitter } from 'events';
-import { del } from '../../../node_modules/@types/selenium-webdriver/http';
+import { del } from 'selenium-webdriver/http';
 
 @Injectable()
 export class EventService {
@@ -40,7 +40,7 @@ export class EventService {
     var result: ISession[] = [];
 
     EVENTS.forEach(event => {
-      var matchingSessions = event.sessions.filter(session => session.name.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase());
+      var matchingSessions = event.sessions.filter(session => session.name.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()));
       matchingSessions = matchingSessions.map((session: any) => {
         session.eventId = event.id;
         return session;

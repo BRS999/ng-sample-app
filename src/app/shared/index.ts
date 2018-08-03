@@ -3,3 +3,4 @@ export * from './event.service';
 export * from './events-list-resolver.service';
 export * from './toastr.service';
 export * from './duration.pipe';
+export * from './jquery.service';
