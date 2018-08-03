@@ -10,6 +10,7 @@ import { JQUERY_TOKEN } from '../shared';
 export class SimpleModalComponent {
     @Input() title: string;
     @Input() elementId: string;
+    @Input() closeOnBodyClick: string;
     @ViewChild('modalContainer') containerEl: ElementRef; //Wrapper to dom node
 
     constructor(@Inject(JQUERY_TOKEN) private $: any) {
@@ -17,7 +18,8 @@ export class SimpleModalComponent {
     }
 
     closeModal() {
-        console.log(this.containerEl.nativeElement);
-        this.$(this.containerEl.nativeElement).modal('hide');
+        if (this.closeOnBodyClick.toLocaleLowerCase() === 'true') {
+            this.$(this.containerEl.nativeElement).modal('hide');
+        }
     }
 }
